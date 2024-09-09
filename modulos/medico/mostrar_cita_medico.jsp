@@ -34,7 +34,7 @@
                         Integer idMedico = (Integer) session.getAttribute("idMedico");
                         if (idMedico != null) {
                             Class.forName("com.mysql.jdbc.Driver");
-                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                             // Seleccionar citas médicas del médico actual
                             String selectSQL = "SELECT cm.idcitaMedica, cm.fecha, cm.hora, CONCAT(c.nombre, ' ', c.apellido) AS cliente_nombre, m.especialidad, cm.estado " +

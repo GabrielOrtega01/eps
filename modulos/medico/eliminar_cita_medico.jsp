@@ -25,7 +25,7 @@
                         try {
                             // Establecer la conexión
                             Class.forName("com.mysql.jdbc.Driver");
-                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                             // Consulta para obtener las citas médicas del médico
                             String selectSQL = "SELECT cm.idcitaMedica, cm.fecha, cm.hora, c.nombre, c.apellido " +
@@ -71,7 +71,7 @@
                 int idCitaMedica = Integer.parseInt(request.getParameter("citaMedica_id"));
                 try {
                     // Establecer la conexión
-                    conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                    conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                     // Eliminar la cita médica
                     pstmt = conexion.prepareStatement("DELETE FROM citamedica WHERE idcitaMedica = ?");

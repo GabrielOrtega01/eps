@@ -76,7 +76,7 @@
                     ResultSet rs = null;
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
-                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                         
                         String selectSQL = "SELECT documento, nombre, apellido, estadoCivil, direccion, correo FROM cliente";
                         pstmt = conexion.prepareStatement(selectSQL);
@@ -134,7 +134,7 @@
                 
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
-                    conexionActualizar = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                    conexionActualizar = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                     
                     String updateSQL = "UPDATE cliente SET estadoCivil=?, direccion=?, correo=? WHERE documento=?";
                     pstmtActualizar = conexionActualizar.prepareStatement(updateSQL);

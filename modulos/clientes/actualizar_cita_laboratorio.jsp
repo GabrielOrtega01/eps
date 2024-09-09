@@ -28,7 +28,7 @@
                             Integer idCliente = (Integer) session.getAttribute("idCliente");
                             if (idCliente != null) {
                                 Class.forName("com.mysql.jdbc.Driver");
-                                conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                                conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                                 // Seleccionar citas con el laboratorio del cliente actual
                                 String selectSQL = "SELECT cl.idcitaLaboratorio, l.nombre AS nombreLaboratorio, cl.fecha, cl.hora " +
@@ -93,7 +93,7 @@
                 if (idCliente != null) {
                     try {
                         // Establecer la conexión
-                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                         // Actualizar la cita con el laboratorio
                         String updateSQL = "UPDATE citaLaboratorio SET fecha = ?, hora = ? WHERE idcitaLaboratorio = ? AND cliente_idcliente = ?";

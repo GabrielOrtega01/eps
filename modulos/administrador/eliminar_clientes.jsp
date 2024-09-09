@@ -73,7 +73,7 @@
                     ResultSet rs = null;
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
-                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                         
                         String selectSQL = "SELECT documento, nombre, apellido FROM cliente";
                         pstmt = conexion.prepareStatement(selectSQL);
@@ -118,7 +118,7 @@
                 
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
-                    conexionEliminar = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                    conexionEliminar = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                     
                     String deleteSQL = "DELETE FROM cliente WHERE documento=?";
                     pstmtEliminar = conexionEliminar.prepareStatement(deleteSQL);

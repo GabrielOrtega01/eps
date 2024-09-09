@@ -34,7 +34,7 @@
                         Integer idCliente = (Integer) session.getAttribute("idCliente");
                         if (idCliente != null) {
                             Class.forName("com.mysql.jdbc.Driver");
-                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                             // Seleccionar citas con el laboratorio del cliente actual
                             String selectSQL = "SELECT idcitaLaboratorio, fecha, hora, estado, nombre FROM citaLaboratorio " +

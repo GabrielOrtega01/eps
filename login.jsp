@@ -19,7 +19,7 @@
         try {
             // Establecer la conexión con la base de datos
             Class.forName("com.mysql.jdbc.Driver");
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
             // Consulta para verificar las credenciales del usuario
             String query = "";
@@ -93,12 +93,12 @@
     }
 %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPS Curitas</title>
+    <title>Quiz JSTL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -111,7 +111,7 @@
                 Credenciales incorrectas. Por favor, inténtelo de nuevo.
             </div>
         <% } %>
-        <form id="login-form" action="login.jsp" method="POST" style="display: flex; flex-direction: column; align-items: center;">
+        <form id="login-form" action="" method="POST" style="display: flex; flex-direction: column; align-items: center;">
 
             <label for="username" style="margin-bottom: 5px; color: #D9D9D9;">Documento:</label>
             <input type="text" id="username" name="username" required maxlength="10" placeholder="Documento" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">

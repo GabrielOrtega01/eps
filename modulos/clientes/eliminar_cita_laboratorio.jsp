@@ -25,7 +25,7 @@
                         try {
                             // Establecer la conexión
                             Class.forName("com.mysql.jdbc.Driver");
-                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                             // Consulta para obtener las citas con el laboratorio del cliente
                             String selectSQL = "SELECT cl.idcitaLaboratorio, cl.fecha, cl.hora, l.nombre " +
@@ -71,7 +71,7 @@
                 int idCitaLaboratorio = Integer.parseInt(request.getParameter("citaLaboratorio_id"));
                 try {
                     // Establecer la conexión
-                    conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                    conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                     // Eliminar la cita con el laboratorio
                     pstmt = conexion.prepareStatement("DELETE FROM citaLaboratorio WHERE idcitaLaboratorio = ?");

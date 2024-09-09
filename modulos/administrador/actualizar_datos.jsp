@@ -27,7 +27,7 @@
 
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
-                    conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                    conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                     if (request.getParameter("clave") != null) {
                         // Actualizar la clave del administrador

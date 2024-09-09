@@ -30,7 +30,7 @@
                     <% 
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
-                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                             PreparedStatement pst = con.prepareStatement("SELECT idcliente, CONCAT(nombre, ' ', apellido) AS nombre_completo FROM cliente");
                             ResultSet rs = pst.executeQuery();
                             while (rs.next()) {
@@ -55,7 +55,7 @@
                     <% 
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
-                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                             PreparedStatement pst = con.prepareStatement("SELECT idmedico, CONCAT(nombre, ' ', apellido) AS nombre_completo FROM medico");
                             ResultSet rs = pst.executeQuery();
                             while (rs.next()) {
@@ -102,7 +102,7 @@
                 String estado = request.getParameter("estado");
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                     PreparedStatement pst = con.prepareStatement("UPDATE citaMedica SET medico_idmedico = ?, fecha = ?, hora = ?, estado = ? WHERE cliente_idcliente = ?");
                     pst.setInt(1, idMedico);
                     pst.setString(2, fecha);

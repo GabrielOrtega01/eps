@@ -45,7 +45,7 @@
                         ResultSet rs = null;
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
-                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                             String selectSQL = "SELECT idcliente, CONCAT(nombre, ' ', apellido) AS nombre_completo FROM cliente";
                             pstmt = conexion.prepareStatement(selectSQL);
@@ -82,7 +82,7 @@
                         rs = null;
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
-                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                             
                             String selectSQL = "SELECT idmedico, CONCAT(nombre, ' ', apellido) AS nombre_completo, especialidad FROM medico";
                             pstmt = conexion.prepareStatement(selectSQL);
@@ -120,7 +120,7 @@
                 int idCliente = Integer.parseInt(request.getParameter("cliente_id"));
                 
                 try {
-                    conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                    conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                     pstmt = conexion.prepareStatement("INSERT INTO citaMedica (cliente_idcliente, medico_idmedico, fecha, hora, estado) VALUES (?, ?, ?, ?, ?)");
                     pstmt.setInt(1, idCliente);
                     pstmt.setInt(2, idMedico);

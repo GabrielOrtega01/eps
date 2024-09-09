@@ -37,7 +37,7 @@
                 <% 
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                         PreparedStatement pst = con.prepareStatement("SELECT cl.fecha, cl.hora, cl.estado, c.nombre AS nombre_cliente, c.apellido AS apellido_cliente, l.nombre AS nombre_laboratorio FROM citaLaboratorio cl INNER JOIN cliente c ON cl.cliente_idcliente = c.idcliente INNER JOIN Laboratorio l ON cl.Laboratorio_idLaboratorio = l.idLaboratorio");
                         ResultSet rs = pst.executeQuery();
                                                 

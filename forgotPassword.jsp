@@ -95,7 +95,7 @@
 
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
-                    connection = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                     String query = "SELECT * FROM " + userType + " WHERE documento = ?";
                     statement = connection.prepareStatement(query);

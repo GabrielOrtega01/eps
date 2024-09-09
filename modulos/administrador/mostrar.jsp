@@ -34,7 +34,7 @@
                     try {
                         // Establecer la conexión
                         Class.forName("com.mysql.jdbc.Driver");
-                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                         // Consulta para obtener todos los administradores
                         String selectSQL = "SELECT * FROM administrador";

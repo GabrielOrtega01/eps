@@ -28,7 +28,7 @@
                             Integer idCliente = (Integer) session.getAttribute("idCliente");
                             if (idCliente != null) {
                                 Class.forName("com.mysql.jdbc.Driver");
-                                conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                                conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                                 // Seleccionar citas médicas del cliente actual
                                 String selectSQL = "SELECT idcitaMedica, CONCAT(m.nombre, ' ', m.apellido) AS medico_nombre, m.especialidad " +
@@ -82,7 +82,7 @@
                         pstmt = null;
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
-                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                             // Seleccionar médicos
                             String selectSQL = "SELECT idmedico, CONCAT(nombre, ' ', apellido) AS nombre, especialidad FROM medico";
@@ -130,7 +130,7 @@
                 if (idCliente != null) {
                     try {
                         // Establecer la conexión
-                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                         // Actualizar la cita médica
                         String updateSQL = "UPDATE citamedica SET medico_idmedico = ?, fecha = ?, hora = ? WHERE idcitaMedica = ? AND cliente_idcliente = ?";

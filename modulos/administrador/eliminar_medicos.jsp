@@ -53,7 +53,7 @@
                         <% 
                             try {
                                 Class.forName("com.mysql.jdbc.Driver");
-                                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                                 PreparedStatement pst = con.prepareStatement("SELECT idmedico, documento, nombre, apellido, especialidad FROM medico");
                                 ResultSet rs = pst.executeQuery();
                                                         
@@ -105,7 +105,7 @@
             int idMedico = Integer.parseInt(request.getParameter("idMedico"));
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                 PreparedStatement pst = con.prepareStatement("DELETE FROM medico WHERE idmedico = ?");
                 pst.setInt(1, idMedico);
                 int rowsAffected = pst.executeUpdate();

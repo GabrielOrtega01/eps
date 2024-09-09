@@ -48,7 +48,7 @@
                 <% 
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                         PreparedStatement pst = con.prepareStatement("SELECT cl.nombre AS nombre_cliente, cl.apellido AS apellido_cliente, ct.fecha, ct.hora, ct.estado, ct.idcitaLaboratorio FROM citaLaboratorio ct INNER JOIN cliente cl ON ct.cliente_idcliente = cl.idcliente");
                         ResultSet rs = pst.executeQuery();
                                                 
@@ -98,7 +98,7 @@
             int citaId = Integer.parseInt(request.getParameter("idcitaLaboratorio"));
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
                 PreparedStatement pst = con.prepareStatement("DELETE FROM citaLaboratorio WHERE idcitaLaboratorio = ?");
                 pst.setInt(1, citaId);
                 int rowsAffected = pst.executeUpdate();

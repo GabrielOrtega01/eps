@@ -35,7 +35,7 @@
                             Integer idCliente = (Integer) session.getAttribute("idCliente");
                             if (idCliente != null) {
                                 Class.forName("com.mysql.jdbc.Driver");
-                                conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                                conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                             // Seleccionar laboratorios
                             String selectSQL = "SELECT idLaboratorio, nombre FROM Laboratorio";
@@ -84,7 +84,7 @@
                 if (idCliente != null) {
                     try {
                         // Establecer la conexión
-                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                         // Insertar la cita en el laboratorio
                         String insertSQL = "INSERT INTO citaLaboratorio (cliente_idcliente, fecha, hora, estado, Laboratorio_idLaboratorio) VALUES (?, ?, ?, ?, ?)";

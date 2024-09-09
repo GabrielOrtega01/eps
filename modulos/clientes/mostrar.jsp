@@ -36,7 +36,7 @@
 
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
-                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                            conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                             String consultaSQL = "SELECT documento, nombre, apellido, estadoCivil, direccion, correo FROM cliente WHERE idcliente = ?";
                             pstmt = conexion.prepareStatement(consultaSQL);

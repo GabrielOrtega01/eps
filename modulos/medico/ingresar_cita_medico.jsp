@@ -28,7 +28,7 @@
                             Integer idMedico = (Integer) session.getAttribute("idMedico");
                             if (idMedico != null) {
                                 Class.forName("com.mysql.jdbc.Driver");
-                                conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                                conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                                 // Seleccionar clientes
                                 String selectSQL = "SELECT idcliente, CONCAT(nombre, ' ', apellido) AS nombre_cliente, documento FROM cliente";
@@ -96,7 +96,7 @@
                 if (idMedico != null) {
                     try {
                         // Establecer la conexión
-                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123");
+                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbeps", "root", "123456");
 
                         // Insertar la nueva cita médica
                         String insertSQL = "INSERT INTO citamedica (cliente_idcliente, medico_idmedico, fecha, hora, estado) VALUES (?, ?, ?, ?, ?)";
